@@ -6,11 +6,11 @@
 
 :root{
 
-    --ff-primary:'Source Sans Pro', sans-serif;
-    --ff-secondary: 'Montserrat', sans-serif;
+    --ff-primary:'Lora', serif;
+    --ff-secondary: 'Roboto Slab', serif;
 
-    --fw-reg:300;
-    --fw-bold:600;
+    --fw-reg:400;
+    --fw-bold:700;
 
     --clr-light:#fff;
     --clr-dark:#303030;
@@ -34,6 +34,11 @@
 
     }
     
+}
+
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -149,7 +154,7 @@ header{
 }
 
 .logo{
-    max-width: 150px;
+    max-width: 180px;
 
 }
 
@@ -189,6 +194,66 @@ header{
 .nav-link:hover{
     color: var(--clr-accent);
 }
+
+
+.nav-toggle{
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 500;
+
+}
+
+.nav-open .nav{
+    transform: translateX(00);
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .burger{
+    transform: rotate(.625turn);
+}
+
+.nav-open .burger::before{
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .burger::after{
+    opacity: 0;
+}
+
+
+.burger{
+    display: block;
+    position: relative;
+}
+
+.burger,
+.burger::before,
+.burger::after{
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.burger::before,
+.burger::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.burger::before{ top: 6px;}
+.burger::after{top:6px;}
 
 
 
